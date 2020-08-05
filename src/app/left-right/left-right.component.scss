@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex: row;
+    align-items: center;
+    min-height: 40vh;
+    padding: 10px;
+    background: blue;
+}
+
+.lr{
+    height: 40vh;
+    flex: 1;
+}
+
+.left{
+    background: red; 
+}
+
+#leftSlide {
+    opacity: 0;
+}
+
+// .lr p, .lr button {
+//     opacity: 0;
+// } 
+
+.right{
+    text-align: right;
+    background: orange;
+    /* flex: 1; */
+}
+
+/* .right:hover, .left:hover {
+    flex:3;
+} */

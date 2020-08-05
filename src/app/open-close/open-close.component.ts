@@ -41,11 +41,10 @@ import { trigger, transition, state, animate, style, AnimationEvent } from '@ang
       ]),
     ]),
   ],
-  templateUrl: 'open-close.component.html',
-  styleUrls: ['open-close.component.css']
+  templateUrl: 'open-close.component.html'
 })
 export class OpenCloseComponent {
-  @Input() logging = false;
+  @Input() logging = true;
   isOpen = true;
 
   toggle() {
@@ -57,28 +56,21 @@ export class OpenCloseComponent {
       return;
     }
     // openClose is trigger name in this example
-    console.warn(`Animation Trigger: ${event.triggerName}`);
+    console.log(`Animation Trigger:`, event.triggerName);
 
     // phaseName is start or done
-    console.warn(`Phase: ${event.phaseName}`);
+    console.log(`Phase: `,event.phaseName);
 
     // in our example, totalTime is 1000 or 1 second
-    console.warn(`Total time: ${event.totalTime}`);
+    console.log(`Total time: `,event.totalTime);
 
     // in our example, fromState is either open or closed
-    console.warn(`From: ${event.fromState}`);
+    console.log(`From: `,event.fromState);
 
     // in our example, toState either open or closed
-    console.warn(`To: ${event.toState}`);
+    console.log(`To: `,event.toState);
 
     // the HTML element itself, the button in this case
-    console.warn(`Element: ${event.element}`);
+    console.log(`Element: `,event.element);
   }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

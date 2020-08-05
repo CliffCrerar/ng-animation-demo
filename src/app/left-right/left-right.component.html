@@ -1,0 +1,15 @@
+<p>left-right works!</p>
+
+<div class="container">
+    <div
+        *ngFor="let i of hoverComponents"
+        [id]="i.id"
+        [@hoverTrigger]="i.states.hover"
+        (mouseenter)="onHover(i.id,'in',$event)"
+        (mouseleave)="onHover(i.id,'out',$event)"
+        [class]="i.classes">
+        <h1>{{i.heading}}</h1>
+        <h3>{{i.subTitle}}</h3>
+        <slide-in-text [state]="i.states.hover" [data]="i.slideInText"></slide-in-text>
+    </div>
+</div>

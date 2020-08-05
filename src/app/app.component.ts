@@ -1,19 +1,21 @@
-import { Component, VERSION } from '@angular/core';
-import { state, trigger, style, animate, transition } from '@angular/animations';
+import { Component } from '@angular/core';
+
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ],
-  animations: [
-    state,
-    trigger,
-    style,
-    animate,
-    transition
+  selector: 'app-root',
+  template: `
+
+    <button (click)="display = 'open-close';">Open Close</button>
+    <button (click)="display = 'left-right';">Left To Right</button>
+    <hr/>
     
-  ]
+    <ng-container [ngSwitch]="display">
+      <app-left-right *ngSwitchCase="'left-right'"></app-left-right>
+      <app-open-close *ngSwitchCase="'open-close'"></app-open-close>
+    </ng-container>
+  `,
 })
-export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+export class AppComponent {
+  title = 'animation-demo';
+  display = 'left-right';
 }
